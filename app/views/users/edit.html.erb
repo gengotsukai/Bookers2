@@ -1,8 +1,28 @@
 <h2>User info</h2>
-<h2>Name</h2>
-<p><%= @user.name %></p>
-<h2>Image</h2>
-<%= attachment_image_tag @user, :image, :fill, 300, 300, format: 'jpeg' %>
-<h2>Introduction</h2>
-<p><%= @user.introduction %></p>
-<%= f.submit 'Update User' %>
+<% if @user.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    
+    <%= pluralize(@user.errors.count, "error") %> prohibited this obj from being saved:</h2>
+
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<!-- form_for部分 -->
+<%= form_for(@user) do |f| %>
+ 
+  <h4>Name</h4>
+  <%= f.text_field :name %>
+
+  <h4>Image</h4>
+  <%= f.attachment_field :profile_image %>
+ 
+  <h4>Introduction</h4>
+  <%= f.text_area :introduction %>
+ 
+  <%= f.submit 'Update User' %>
+ 
+<% end %>

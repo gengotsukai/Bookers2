@@ -14,18 +14,18 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Bookers</a>
+        <h2>Bookers</h2>
         <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <% if user_signed_in? %>
                 <li class="">
-                  <%= link_to "Home", root_path %>
+                  <%= link_to "Home", user_path(current_user.id) %>
                 </li>
                 <li class="">
-                  <%= link_to 'Users' %>
+                  <%= link_to 'Users', users_path %>
                 </li>
                 <li class="">
-                  <%= link_to 'Books' %>
+                  <%= link_to 'Books', books_path %>
                 </li>
                 <li class="">
                   <%= link_to "logout", destroy_user_session_path, method: :delete %>

@@ -4,10 +4,15 @@
   </div>
  <% end %>
 
-<%= render 'shared/userinfonewbook', user: @user, book: @book %>
+<div class="container"> <!-- ここを追加 -->
+  <div class="row">   <!-- ここを追加 -->
+   <div class="col-lg-3" style="background-color: white;"> 
+      <%= render 'shared/userinfonewbook', user: @user, book: @book %>
+   </div>
 
-<h1>Books</h1>
-  <table>
+<div class="col-lg-9">  <!-- ここを追加 -->
+ <h1>Books</h1>
+  <table class="table table-striped">
     <thead>
      <tr>
       <th>Title</th>
@@ -25,4 +30,7 @@
     </tbody>
 
   </table>
+</div>
+</div>
+</div>
 

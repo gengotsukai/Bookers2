@@ -4,16 +4,31 @@
   </div>
  <% end %>
 
-<h1>welcome to
-	<strong>Bookers!!</strong>
-</h1>
-<p>In
+<div class="container"> <!-- ここを追加 -->
+  <div class="row">   <!-- ここを追加 -->
+   <div class="col-lg-3" style="background-color: white;"></div>
+   	
+   	<div class="col-lg-6">
+      <h1>welcome to
+      	<span class="glyphicon glyphicon-book"></span>
+		<strong>Bookers!!</strong>
+	  </h1>
+	<p>In
+	<span class="glyphicon glyphicon-book"></span>
 	<strong>Bookers,</strong>
 	you can share and exchange your opinions,
 	inpressions, and emotions
-</p>
-<p>about various books!</p>
+	</p>
+	<p>about various books!</p>
 
-<%= link_to "Log in", new_user_session_path %>
-<%= link_to "Sign up", new_user_registration_path %>
+	<%= link_to "Log in", new_user_session_path %>
+	<%= link_to "Sign up", new_user_registration_path %>
+	</div>
+
+	<div class="col-lg-3"></div>
+
+</div>
+</div>
+
+
 

@@ -1,3 +1,7 @@
+<div class="container"> <!-- ここを追加 -->
+  <div class="row">   <!-- ここを追加 -->
+   <div class="col-lg-3" style="background-color: white;"> 
+   </div>
 <h2>User info</h2>
 <% if @user.errors.any? %>
   <div id="error_explanation" class="alert alert-danger">
@@ -26,3 +30,5 @@
   <%= f.submit 'Update User' %>
  
 <% end %>
+</div>
+</div>

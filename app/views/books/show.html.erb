@@ -1,7 +1,12 @@
-<%= render 'shared/userinfonewbook', user: @user, book: @book %>
+<div class="container"> <!-- ここを追加 -->
+  <div class="row">   <!-- ここを追加 -->
+   <div class="col-lg-3" style="background-color: white;"> 
+      <%= render 'shared/userinfonewbook', user: @user, book: @book %>
+   </div>
 
-<h1>Book detail</h1>
-  <table>
+<div class="col-lg-8">  <!-- ここを追加 -->
+ <h1>Book detail</h1>
+  <table class="table table-striped">
     <thead>
      <tr>
       <th>Title</th>
@@ -10,14 +15,18 @@
     </thead>
 
     <tbody>
-     <% @books.each do |book| %>
       <tr>
-       <%= attachment_image_tag book.user, :profile_image %>
-       <td><%= book.title %></td>
-       <td><%= book.body %></td>
-       <td><%= link_to "Edit", edit_book_path(book.id) %></td>
-       <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
-     <% end %>
+       <%= attachment_image_tag @user, :profile_image %>
+       <td><%= @mybook.title %></td>
+       <td><%= @mybook.body %></td>
+       <% if @user == current_user %>
+       <td><%= link_to "Edit", edit_book_path(@mybook.id) %></td>
+       <td><%= link_to "Destroy", book_path(@mybook.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
+       <% end %>
+     </tr>
     </tbody>
 
   </table>
+</div>
+</div>
+</div>
